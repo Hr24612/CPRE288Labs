@@ -1,0 +1,12 @@
+%%bb = [0.5, 0.5]; %-- Filter Coefficients
+bb = 1/4*ones(1,4);
+ww = -pi:(pi/400):pi; %-- omega hat
+%%HH = ((2*cos(0.5*ww)+2*cos(1.5*ww))/4).*exp(-j*1.5*ww);
+%%HH = freqz(HOF,1,ww);
+HH = freqz(bb, 1, ww); %<--freekz.m is an alternative
+subplot(2,1,1);
+plot(ww, abs(HH));
+subplot(2,1,2);
+plot(ww, angle(HH));
+xlabel('Normalized Radian Frequency');
+matlab crap :P
